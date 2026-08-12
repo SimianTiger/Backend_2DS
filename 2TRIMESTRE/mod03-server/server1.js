@@ -5,6 +5,7 @@ const porta = 8005
 // carregar o caminho dos arquivos
 const home = path.join(__dirname, 'pages/index.html')
 const sobre = path.join(__dirname, 'pages/sobre.html')
+const erro = path.join(__dirname, 'pages/404.html')
 
 const server = http.createServer((req,res) =>{
     //qual informação eu tenho?
@@ -16,7 +17,16 @@ const server = http.createServer((req,res) =>{
         res.statusCode = 200
         return res.end(fs.readFileSync(home, 'utf-8'))
 
-    }if(recurso === '/sobre'){
+    }
+    
+    if(recurso === '/404'){
+        res.setHeader('Content-Type', 'text/html; charset=utf-8')
+        res.statusCode = 404
+        return res.end(fs.readFileSync(erro, 'utf-8'))
+
+    }
+
+    if(recurso === '/sobre'){
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         res.statusCode = 200
         return res.end(fs.readFileSync(sobre, 'utf-8'))

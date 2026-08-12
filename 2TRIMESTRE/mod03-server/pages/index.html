@@ -1,13 +1,472 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Valorant - Página Inicial</title>
+    <!-- Importação de fontes oficiais/estilo Valorant: Bebas Neue e Rajdhani (Títulos) + Inter (Corpo) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --val-dark: #0f1923;
+            --val-dark-card: #182532;
+            --val-red: #ff4655;
+            --val-red-hover: #e03e4d;
+            --val-white: #ece8e1;
+            --val-gray: #768079;
+            --val-grid: rgba(255, 255, 255, 0.04);
+            --font-display: 'Bebas Neue', sans-serif;
+            --font-tactical: 'Rajdhani', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--val-dark);
+            color: var(--val-white);
+            font-family: var(--font-body);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow-x: hidden;
+            /* Padrão de grade tática e overlay estilo Valorant HQ */
+            background-image: 
+                linear-gradient(to right, var(--val-grid) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--val-grid) 1px, transparent 1px),
+                linear-gradient(135deg, rgba(15, 25, 35, 0.95) 20%, rgba(15, 25, 35, 0.75) 100%),
+                url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1920&auto=format&fit=crop');
+            background-size: 30px 30px, 30px 30px, cover, cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Efeito de brilho tático vermelho no fundo */
+        body::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 70, 85, 0.18) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Nav Superior Oficial do Valorant */
+        header {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2.5rem;
+            background: rgba(15, 25, 35, 0.92);
+            border-bottom: 1px solid rgba(236, 232, 225, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .brand-group {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .riot-text {
+            font-family: var(--font-display);
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: var(--val-white);
+            text-transform: uppercase;
+        }
+
+        .brand-divider {
+            width: 1px;
+            height: 24px;
+            background: rgba(236, 232, 225, 0.2);
+        }
+
+        .val-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--val-white);
+        }
+
+        .val-logo svg {
+            width: 32px;
+            height: 32px;
+            fill: var(--val-red);
+            transition: transform 0.25s ease;
+        }
+
+        .val-logo:hover svg {
+            transform: scale(1.08);
+        }
+
+        .val-logo-text {
+            font-family: var(--font-tactical);
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        /* Abas Centrais do Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--val-white);
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            letter-spacing: 2px;
+            opacity: 0.6;
+            transition: all 0.2s ease;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            opacity: 1;
+            color: var(--val-white);
+        }
+
+        .nav-menu a.active {
+            color: var(--val-red);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--val-red);
+        }
+
+        /* Status & Moedas (VP & RP) */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .currency-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-family: var(--font-tactical);
+            font-weight: 700;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 5px 12px;
+            border-radius: 2px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        /* Container Conteúdo Principal */
+        main {
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        /* Card Principal Estilo Valorant HUD */
+        .hero-panel {
+            position: relative;
+            max-width: 750px;
+            background: var(--val-dark-card);
+            border: 1px solid rgba(236, 232, 225, 0.12);
+            padding: 3.5rem 3rem;
+            /* Recorte geométrico tático de cantos */
+            clip-path: polygon(0 0, calc(100% - 30px) 0, 100% 30px, 100% 100%, 30px 100%, 0 calc(100% - 30px));
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: var(--val-red);
+        }
+
+        .tactical-tag {
+            font-family: var(--font-tactical);
+            font-size: 0.9rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--val-red);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Título h3 fornecido pelo usuário com visual tático */
+        h3 {
+            font-family: var(--font-display);
+            font-size: 5rem;
+            line-height: 0.95;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--val-white);
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Parágrafo p fornecido pelo usuário com estilização elegante */
+        p {
+            font-size: 1.15rem;
+            color: #b0b8c1;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            max-width: 520px;
+        }
+
+        /* Estilização do Botão mantendo intacto o código <button><a href="/sobre">Sobre</a></button> */
+        .btn-container {
+            display: inline-block;
+        }
+
+        button {
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+            display: inline-block;
+        }
+
+        button a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            background: var(--val-red);
+            color: var(--val-white);
+            font-family: var(--font-display);
+            font-size: 2rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            text-decoration: none;
+            padding: 1.1rem 3.5rem;
+            position: relative;
+            z-index: 1;
+            /* Corte trapezoidal clássico do botão JOGAR do Valorant */
+            clip-path: polygon(14px 0, 100% 0, 100% calc(100% - 14px), calc(100% - 14px) 100%, 0 100%, 0 14px);
+            transition: all 0.2s ease;
+            box-shadow: 0 8px 25px rgba(255, 70, 85, 0.4);
+        }
+
+        button a:hover {
+            background: var(--val-white);
+            color: var(--val-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(236, 232, 225, 0.4);
+        }
+
+        button a svg {
+            width: 20px;
+            height: 20px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 3;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            transition: transform 0.2s ease;
+        }
+
+        button a:hover svg {
+            transform: translateX(4px);
+        }
+
+        /* Elemento de Imagem Base64 / Unsplash com filtro e borda estilo HUD */
+        .card-footer-visual {
+            margin-top: 2.5rem;
+            width: 100%;
+            height: 180px;
+            border: 1px solid rgba(236, 232, 225, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 2px;
+        }
+
+        .card-footer-visual img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.15);
+            transition: transform 0.4s ease, filter 0.4s ease;
+        }
+
+        .card-footer-visual:hover img {
+            transform: scale(1.03);
+            filter: brightness(0.85) contrast(1.2);
+        }
+
+        .visual-tag {
+            position: absolute;
+            bottom: 12px;
+            left: 16px;
+            font-family: var(--font-tactical);
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: var(--val-white);
+            background: rgba(15, 25, 35, 0.85);
+            padding: 4px 10px;
+            border-left: 3px solid var(--val-red);
+        }
+
+        /* Rodapé Oficial */
+        footer {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 2.5rem;
+            background: rgba(15, 25, 35, 0.95);
+            border-top: 1px solid rgba(236, 232, 225, 0.08);
+            font-family: var(--font-tactical);
+            font-size: 0.85rem;
+            color: var(--val-gray);
+            letter-spacing: 2px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header {
+                padding: 1rem 1.5rem;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .hero-panel {
+                padding: 2.5rem 1.5rem;
+            }
+            h3 {
+                font-size: 3.5rem;
+            }
+            button a {
+                padding: 0.9rem 2.2rem;
+                font-size: 1.6rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h3>Página inicial</h3>
-    <p>Óla, você está em casa</p>
-    <button><a href="/sobre">Sobre</a></button>
+
+    <!-- Cabeçalho Oficial com Logos Oficiais em SVG -->
+    <header>
+        <div class="brand-group">
+            <span class="riot-text">RIOT</span>
+            <div class="brand-divider"></div>
+            <a href="#" class="val-logo">
+                <!-- Logotipo Oficial do Valorant (V em formato vetorial preciso) -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <polygon points="0,10 33,10 66,90 33,90" />
+                    <polygon points="62,10 100,10 100,90" />
+                </svg>
+                <span class="val-logo-text">VALORANT</span>
+            </a>
+        </div>
+
+        <!-- Menu de Navegação -->
+        <ul class="nav-menu">
+            <li><a href="#" class="active">INÍCIO</a></li>
+            <li><a href="#">PASSE DE BATALHA</a></li>
+            <li><a href="#">AGENTES</a></li>
+            <li><a href="#">COLEÇÃO</a></li>
+            <li><a href="#">LOJA</a></li>
+        </ul>
+
+        <!-- Moedas Oficiais do Valorant (VP & RP) em SVG -->
+        <div class="header-right">
+            <!-- Valorant Points (VP) -->
+            <div class="currency-item">
+                <svg width="18" height="18" viewBox="0 0 100 100" fill="#ff4655">
+                    <circle cx="50" cy="50" r="48" fill="#182532" stroke="#ff4655" stroke-width="4"/>
+                    <polygon points="30,35 50,68 70,35 56,35 50,48 44,35" fill="#ece8e1"/>
+                </svg>
+                <span>1.250 VP</span>
+            </div>
+
+            <!-- Radianite Points (RP) -->
+            <div class="currency-item">
+                <svg width="18" height="18" viewBox="0 0 100 100">
+                    <circle cx="50" cy="50" r="48" fill="#182532" stroke="#ece8e1" stroke-width="4"/>
+                    <polygon points="50,22 75,50 50,78 25,50" fill="#ff4655"/>
+                </svg>
+                <span>40 RP</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="hero-panel">
+            <div class="tactical-tag"> PROTOCOLO DE ACESSO // SISTEMA</div>
+
+            <!-- Conteúdo original mantido -->
+            <h3>Página inicial</h3>
+            <p>Óla, você está em casa. Bem-vindo à central de operações táticas do Valorant Protocol.</p>
+
+            <!-- Rota original preservada no botão oficial -->
+            <div class="btn-container">
+                <button>
+                    <a href="/sobre">
+                        <span>Sobre</span>
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </button>
+            </div>
+
+            <!-- Elemento de imagem tática (Unsplash / Base64 Data URI) -->
+            <div class="card-footer-visual">
+                <!-- Imagem Base64 / Unsplash com efeito tático -->
+                <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHJlY3Qgd2lkdGg9IjEwMCIgaGVpZ2h0PSIxMDAiIGZpbGw9IiMxODI1MzIiLz48cGF0aCBkPSJNMCAwTDEwMCAxMDBNMTAwIDBMMCAxMDAiIHN0cm9rZT0icmdiYSgyNTUsNzAsODUsMC4xNSkiIHN0cm9rZS13aWR0aD0iMiIvPjwvc3ZnPg==" style="position: absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0.3;" alt="pattern">
+                <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200&auto=format&fit=crop" alt="Valorant Tactical Base" loading="lazy">
+                <div class="visual-tag">HQ OPERATOR // ONLINE &bull; AGENT LOBBY</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>
+        <div>VALORANT PROTOCOL &bull; RIOT GAMES</div>
+        <div>V 8.11.00 &bull; ALL RIGHTS RESERVED</div>
+    </footer>
+
 </body>
 </html>
