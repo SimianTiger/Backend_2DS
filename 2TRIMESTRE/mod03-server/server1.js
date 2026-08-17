@@ -19,7 +19,7 @@ const server = http.createServer((req,res) =>{
 
     }
     
-    if(recurso === '/404'){
+    if(recurso === '/error' || recurso === '/404'){
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         res.statusCode = 404
         return res.end(fs.readFileSync(erro, 'utf-8'))
@@ -30,11 +30,11 @@ const server = http.createServer((req,res) =>{
         res.setHeader('Content-Type', 'text/html; charset=utf-8')
         res.statusCode = 200
         return res.end(fs.readFileSync(sobre, 'utf-8'))
-    } else {
-        res.setHeader('Content-Type', 'text/html; charset=utf-8')
-        res.statusCode = 401
-        return res.end('<h3>401 Não Autorizado</h3>')
     }
+
+    res.setHeader('Content-Type', 'text/html; charset=utf-8')
+    res.statusCode = 404
+    return res.end(fs.readFileSync(erro, 'utf-8'))
 })
 
 server.listen(porta, ()=>{
