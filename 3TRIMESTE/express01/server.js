@@ -2,10 +2,10 @@
 
 import express from 'express'
 
-const app = express()
+const app = express() //instanciar Express
 
 app.get('/', (req, res) => {
-  res.send('Home Ok')
+  res.send(`<h3>Página incial</h3>\n<p>Loja especializada em roupas</p>`)
 })
 
 app.get('/roupa', (req, res) => {
