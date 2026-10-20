@@ -1,15 +1,33 @@
-// importação moderna com ESM (import)
-
 import express from 'express'
+import path from 'path'
 
-const app = express() //instanciar Express
+const app = express()
+const paginasPath = path.resolve('src/paginas')
+const estilosPath = path.resolve('src/publico/estilos')
 
 app.get('/', (req, res) => {
-  res.send(`<h3>Página incial</h3>\n<p>Loja especializada em roupas</p>`)
+  res.sendFile(path.join(paginasPath, 'index.html'))
 })
 
-app.get('/roupa', (req, res) => {
-  res.send('Roupa Ok')
+app.get('/jogos', (req, res) => {
+  res.sendFile(path.join(paginasPath, 'jogos.html'))
 })
 
-app.listen(3000, () => {console.log('Servidor está online')})
+app.get('/como-funciona', (req, res) => {
+  res.sendFile(path.join(paginasPath, 'como-funciona.html'))
+})
+
+app.get('/avaliacoes', (req, res) => {
+  res.sendFile(path.join(paginasPath, 'avaliacoes.html'))
+})
+
+app.get('/contato', (req, res) => {
+  res.sendFile(path.join(paginasPath, 'contato.html'))
+})
+
+app.use('/estilos', express.static(estilosPath))
+app.use(express.static(paginasPath))
+
+app.listen(3000, () => {
+  console.log('Servidor está online: http://localhost:3000')
+})

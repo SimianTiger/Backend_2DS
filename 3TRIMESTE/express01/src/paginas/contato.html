@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Central de suporte e perguntas frequentes da DreamCoins. Tire dúvidas sobre recargas, chaves digitais e fale com nossa equipe.">
+  <title>DreamCoins ✦ Suporte, FAQ & Redes Sociais</title>
+  <link rel="stylesheet" href="estilos/style.css">
+</head>
+<body>
+  <!-- Fundo Onírico com Orbes de Luz e Névoa Suave -->
+  <div class="dream-bg-layer" aria-hidden="true">
+    <div class="dream-mist"></div>
+    <div class="dream-bg-orb orb-1"></div>
+    <div class="dream-bg-orb orb-2"></div>
+    <div class="dream-bg-orb orb-3"></div>
+  </div>
+
+  <!-- Barra Superior -->
+  <aside class="top-announcement">
+    <div class="container top-announcement-inner">
+      <p>
+        <span class="badge-pulse"></span>
+        <span class="sparkle">✦</span> Atendimento humanizado online todos os dias das <strong>08h às 00h</strong>!
+      </p>
+      <div class="top-links">
+        <a href="index.html">Início</a>
+        <span class="separator">•</span>
+        <a href="jogos.html">Ver Jogos</a>
+        <span class="separator">•</span>
+        <a href="como-funciona.html">Como Funciona</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cabeçalho / Navbar -->
+  <header class="main-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="DreamCoins Página Inicial">
+        <div class="logo-icon-box">
+          <svg viewBox="0 0 32 32" fill="none" class="logo-svg">
+            <defs>
+              <linearGradient id="logoGradContato" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#bda6ff" />
+                <stop offset="0.5" stop-color="#f472b6" />
+                <stop offset="1" stop-color="#67e8f9" />
+              </linearGradient>
+            </defs>
+            <circle cx="16" cy="16" r="14" stroke="url(#logoGradContato)" stroke-width="2.5" />
+            <path d="M16 6L18.5 13.5L26 16L18.5 18.5L16 26L13.5 18.5L6 16L13.5 13.5L16 6Z" fill="url(#logoGradContato)" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">Dream<span>Coins</span></span>
+          <span class="brand-tagline">Portal Gamer</span>
+        </div>
+      </a>
+
+      <!-- Menu de Navegação -->
+      <nav class="nav-menu" id="navMenu">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Início</a></li>
+          <li><a href="jogos.html" class="nav-link">Jogos & Moedas</a></li>
+          <li><a href="como-funciona.html" class="nav-link">Como Funciona</a></li>
+          <li><a href="avaliacoes.html" class="nav-link">Avaliações</a></li>
+          <li><a href="contato.html" class="nav-link active">Suporte & FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cart-btn" id="openCartBtn" aria-label="Ver Carrinho de Compras">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 01-8 0"></path>
+          </svg>
+          <span class="cart-count" id="cartCountBadge">0</span>
+        </button>
+        <button type="button" class="btn-account" id="loginBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+          <span>Minha Conta</span>
+        </button>
+        <button type="button" class="mobile-toggle" id="mobileMenuToggle" aria-label="Abrir Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Banner de Página -->
+    <section class="page-header-banner">
+      <div class="container">
+        <span class="section-tag">✦ Ajuda & Comunidade</span>
+        <h1 class="page-title">Central de Suporte & Perguntas Frequentes</h1>
+        <p class="page-subtitle">
+          Precisa de auxílio com seu pedido ou quer tirar dúvidas sobre chaves e prazos? Nossa equipe gamer está pronta para te atender.
+        </p>
+      </div>
+    </section>
+
+    <!-- Layout de Suporte + Formulário -->
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-layout-grid">
+          <!-- Coluna da Esquerda: Canais Diretos -->
+          <div class="contact-info-card">
+            <span class="section-tag">Canais Oficiais</span>
+            <h3 class="card-title-lg">Fale Conosco em Tempo Real</h3>
+            <p class="card-desc-soft">
+              Escolha seu canal preferido para atendimento rápido ou para participar da nossa guilda gamer.
+            </p>
+
+            <div class="contact-channels">
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="channel-title">Discord Oficial da Guilda</strong>
+                  <span class="channel-desc">discord.gg/dreamcoins-guild • Respostas em até 10 min</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="channel-title">Instagram Oficial</strong>
+                  <span class="channel-desc">@dreamcoins.gg • Novidades e Sorteios diários</span>
+                </div>
+              </div>
+
+              <div class="channel-item">
+                <div class="channel-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <strong class="channel-title">E-mail para Pedidos Corporativos</strong>
+                  <span class="channel-desc">suporte@dreamcoins.gg • Atendimento em horário comercial</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="support-status mt-20">
+              <span class="status-indicator"></span>
+              <strong class="text-emerald">Atendentes online agora</strong>
+            </div>
+          </div>
+
+          <!-- Coluna da Direita: Formulário de Mensagem -->
+          <div class="support-form-card">
+            <span class="section-tag">Envie um Ticket</span>
+            <h3 class="card-title-lg">Formulário Rápido de Contato</h3>
+            <p class="card-desc-mb">
+              Preencha os dados abaixo e entraremos em contato com você via e-mail.
+            </p>
+
+            <form id="supportForm">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Seu Nome ou Nickname:</label>
+                <input type="text" id="contactName" class="form-input" placeholder="Ex: Lucas Gabriel" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Seu E-mail para Retorno:</label>
+                <input type="email" id="contactEmail" class="form-input" placeholder="Ex: jogador@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="contactGame" class="form-label">Jogo ou Assunto Relacionado:</label>
+                <select id="contactGame" class="form-select">
+                  <option value="valorant">Valorant (VP)</option>
+                  <option value="freefire">Free Fire (Diamantes)</option>
+                  <option value="roblox">Roblox (Robux)</option>
+                  <option value="lol">League of Legends (RP)</option>
+                  <option value="genshin">Genshin Impact</option>
+                  <option value="steam">Steam & Gift Cards</option>
+                  <option value="outro">Outro Assunto / Dúvida Geral</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contactMessage" class="form-label">Descreva sua Dúvida ou Problema:</label>
+                <textarea id="contactMessage" class="form-textarea" placeholder="Descreva brevemente o que precisa de ajuda..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn-primary w-full-btn">
+                <span>Enviar Mensagem</span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Seção de Perguntas Frequentes (FAQ) -->
+        <div class="mt-80">
+          <div class="section-header text-center">
+            <span class="section-tag">Dúvidas Frequentes</span>
+            <h2 class="section-title">Perguntas Mais Comuns</h2>
+            <p class="section-subtitle">Confira respostas rápidas para as dúvidas mais comuns dos nossos clientes.</p>
+          </div>
+
+          <div class="faq-accordion faq-container-narrow">
+            <details class="faq-item" open>
+              <summary class="faq-question">
+                <span>Quanto tempo demora para a moeda cair na minha conta?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Pagamentos efetuados via Pix contam com aprovação instantânea! Nosso sistema automatizado envia o código digital ou realiza a recarga direta no seu ID em média entre 30 segundos e 3 minutos.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Existe algum risco de banimento da minha conta?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Absolutamente zero risco. Trabalhamos exclusivamente como revendedores e parceiros oficiais das desenvolvedoras (Riot Games, Garena, Roblox Corp, Supercell, etc.). Todas as moedas são emitidas por vias legítimas.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Vocês pedem a senha da minha conta de jogo?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p><strong>NUNCA!</strong> Jamais pediremos a sua senha. As recargas são feitas unicamente por código PIN oficial para resgate próprio ou informando seu ID público de jogador.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>O que acontece se eu digitar meu ID de jogador errado?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Caso perceba o erro antes do envio automático, chame imediatamente nosso time no Discord informando o comprovante Pix. Se o ID inserido não existir nos servidores do jogo, o sistema pausa a transação para validação segura.</p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span>Quais métodos de pagamento são aceitos além do Pix?</span>
+                <svg class="faq-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+              </summary>
+              <div class="faq-answer">
+                <p>Além do Pix (que conta com 5% de desconto automático imediato), aceitamos Cartões de Crédito em até 12x, Mercado Pago, PicPay e Boleto Bancário.</p>
+              </div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="main-footer">
+    <div class="container footer-content-grid">
+      <div class="footer-col brand-col">
+        <a href="index.html" class="brand-logo footer-logo">
+          <div class="logo-icon-box">
+            <svg viewBox="0 0 32 32" fill="none" class="logo-svg">
+              <circle cx="16" cy="16" r="14" stroke="#bda6ff" stroke-width="2.5" />
+              <path d="M16 6L18.5 13.5L26 16L18.5 18.5L16 26L13.5 18.5L6 16L13.5 13.5L16 6Z" fill="#bda6ff" />
+            </svg>
+          </div>
+          <span class="brand-title">Dream<span>Coins</span></span>
+        </a>
+        <p class="footer-text">
+          Portal onírico de recargas para jogos online e cartões pré-pagos.
+          Inspirado na facilidade das grandes plataformas com design acolhedor e seguro.
+        </p>
+        <div class="security-seal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+            <path d="M7 11V7a5 5 0 0110 0v4"></path>
+          </svg>
+          <span>Conexão Segura SSL 256-bit</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Páginas</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Início</a></li>
+          <li><a href="jogos.html">Catálogo de Jogos</a></li>
+          <li><a href="como-funciona.html">Como Funciona</a></li>
+          <li><a href="avaliacoes.html">Avaliações da Comunidade</a></li>
+          <li><a href="contato.html">Central de Ajuda & FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Pagamentos Aceitos</h4>
+        <p class="footer-subtext">Aprovação imediata e sem tarifas ocultas:</p>
+        <div class="payment-badges-grid">
+          <span class="pay-pill">⚡ PIX (Imediato)</span>
+          <span class="pay-pill">💳 Cartão de Crédito</span>
+          <span class="pay-pill">🟢 PicPay</span>
+          <span class="pay-pill">🔵 Mercado Pago</span>
+          <span class="pay-pill">📄 Boleto Fácil</span>
+        </div>
+        <div class="support-status">
+          <span class="status-indicator"></span>
+          <span>Suporte ativo agora</span>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Redes da Comunidade</h4>
+        <p class="footer-subtext">Drops de chaves e sorteios semanais nas nossas contas fictícias oficiais:</p>
+        <ul class="social-links-list">
+          <li>
+            <a href="https://instagram.com/dreamcoins.gg" target="_blank" rel="noopener noreferrer" class="social-pill instagram-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@dreamcoins.gg</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/dreamcoins-guild" target="_blank" rel="noopener noreferrer" class="social-pill discord-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20.317 4.37a19.791 19.791 0 00-4.885-1.515.074.074 0 00-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 00-5.487 0 12.64 12.64 0 00-.617-1.25.077.077 0 00-.079-.037A19.736 19.736 0 003.677 4.37a.07.07 0 00-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 00.031.057 19.9 19.9 0 005.993 3.03.078.078 0 00.084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.107 13.107 0 01-1.872-.892.077.077 0 01-.008-.128 10.2 10.2 0 00.372-.292.074.074 0 01.078.01c.12.098.246.198.373.292a.077.077 0 01-.006.127 12.299 12.299 0 01-1.873.894.077.077 0 00-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 00.084.028 19.839 19.839 0 006.002-3.03.077.077 0 00.032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 00-.031-.028zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z"/>
+              </svg>
+              <span>Discord: /dreamcoins</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://tiktok.com/@dreamcoins_brasil" target="_blank" rel="noopener noreferrer" class="social-pill tiktok-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.59-1v7.61c.02 3.19-2.07 6.13-5.16 6.88-3.08.76-6.42-.69-7.85-3.41-1.43-2.73-.65-6.19 1.83-8.06 1.56-1.17 3.63-1.53 5.53-1.04v4.11c-.74-.29-1.58-.33-2.33-.12-.99.28-1.74 1.12-1.92 2.13-.19 1.01.21 2.07 1.02 2.72.81.65 1.94.75 2.85.25.9-.49 1.48-1.45 1.48-2.47V.02z"/>
+              </svg>
+              <span>TikTok: @dreamcoins_br</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/dreamcoins_app" target="_blank" rel="noopener noreferrer" class="social-pill twitter-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+              <span>X: @dreamcoins_app</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://youtube.com/@dreamcoins_oficial" target="_blank" rel="noopener noreferrer" class="social-pill youtube-pill">
+              <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+              <span>YouTube: @dreamcoins_oficial</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p class="copyright-text">
+          &copy; 2026 DreamCoins Intermediações de Jogos Digitais Ltda. CNPJ: 45.892.110/0001-34.
+        </p>
+        <p class="disclaimer-text">
+          Estética inspirada em Dreamcore e modelos de referência do mercado. Todas as marcas pertencem aos seus respectivos criadores.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sidebar do Carrinho -->
+  <div class="cart-sidebar-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar" aria-label="Carrinho de Compras">
+    <div class="cart-sidebar-header">
+      <h3>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        Meu Carrinho
+      </h3>
+      <button type="button" class="cart-close-btn" id="cartCloseBtn" aria-label="Fechar Carrinho">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="cart-empty-state" id="cartEmptyState">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+        <p>Seu carrinho está vazio</p>
+        <a href="jogos.html">Explorar Catálogo ✦</a>
+      </div>
+    </div>
+    <div class="cart-sidebar-footer" id="cartFooter">
+      <div class="cart-total-line">
+        <span class="cart-total-label">Total:</span>
+        <span class="cart-total-value" id="cartTotalValue">R$ 0,00</span>
+      </div>
+      <button type="button" class="cart-checkout-btn" id="cartCheckoutBtn">
+        <span>Finalizar Compra</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+      </button>
+      <button type="button" class="cart-clear-btn" id="cartClearBtn">Limpar Carrinho</button>
+    </div>
+  </aside>
+
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+</body>
+</html>
