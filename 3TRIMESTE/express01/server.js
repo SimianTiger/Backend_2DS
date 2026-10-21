@@ -1,9 +1,11 @@
 import express from 'express'
 import path from 'path'
+import { fileURLToPath } from 'node:url'
 
 const app = express()
-const paginasPath = path.resolve('src/paginas')
-const estilosPath = path.resolve('src/publico/estilos')
+const serverDirectory = path.dirname(fileURLToPath(import.meta.url))
+const paginasPath = path.join(serverDirectory, 'src/paginas')
+const estilosPath = path.join(serverDirectory, 'src/publico/estilos')
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(paginasPath, 'index.html'))
